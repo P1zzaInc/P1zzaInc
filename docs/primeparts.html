@@ -1,56 +1,60 @@
 <!DOCTYPE html>
 <html>
- <TITLE> PrimeParts </TITLE>
+<TITLE> PrimeParts </TITLE>
+
 <body>
-	<table border="3" style="width:1000px;height:600px;">
-		<tr>
-			<td style="width:150px;vertical-align:top;">
-			<!-- menu -->
-				<table border="3" style="width:100%;">
+    <table border="3" style="width:1000px;height:600px;">
+        <tr>
+            <td style="width:150px;vertical-align:top;">
+                <!-- menu -->
+                <table border="3" style="width:100%;">
                     <b> Things </b>
-					<tr>
-						<td><a href="index.html">Main</a></td>
-					</tr>
-					<tr>
-						<td><a href="primeparts.html">PrimeParts</a></td>
-					</tr>
-				</table>
-			</td>
-			<td style ="vertical-align:top;">
-				<!-- put  stuff here-->
-                <style>
-                    table, th, td{
-                        border: 1px solid black;
-                    }
-                </style>
-                    <!-- cv pasted -->
-                    
-                    <script>
-                    function createTable(tableData) {
-                        var table = document.createElement('table');
-                        var tableBody = document.createElement('tbody');
-                      
-                        tableData.forEach(function(rowData) {
-                          var row = document.createElement('tr');
-                      
-                          rowData.forEach(function(cellData) {
-                            var cell = document.createElement('td');
-                            cell.appendChild(document.createTextNode(cellData));
-                            row.appendChild(cell);
-                          });
-                      
-                          tableBody.appendChild(row);
-                        });
-                      
-                        table.appendChild(tableBody);
-                        document.body.appendChild(table);
-                    }
-                      createTable([["row 1, cell 1", "row 1, cell 2", "yo"], ["row 2, cell 1", "row 2, cell 2"]]);
-                      
-                    </script>
-                    
-			</td>
-		</tr>
-	</table>
+                    <tr>
+                        <td><a href="index.html">Main</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="primeparts.html">PrimeParts</a></td>
+                    </tr>
+                </table>
+            </td>
+            <td id="table-content" style="vertical-align:top;">
+
+
+            </td>
+        </tr>
+    </table>
 </body>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+<!-- cv pasted -->
+
+<script>
+    function createTable(tableData) {
+        var table = document.createElement('table');
+        var tableBody = document.createElement('tbody');
+
+        tableData.forEach(function (rowData) {
+            var row = document.createElement('tr');
+
+            rowData.forEach(function (cellData) {
+                var cell = document.createElement('td');
+                cell.appendChild(document.createTextNode(cellData));
+                row.appendChild(cell);
+            });
+
+            tableBody.appendChild(row);
+        });
+
+        table.appendChild(tableBody);
+        document.querySelector("#table-content").appendChild(table)
+    }
+    createTable([["row 1, cell 1", "row 1, cell 2", "yo"], ["row 2, cell 1", "row 2, cell 2"]]);
+
+</script>
+
 </html>
