@@ -30,19 +30,27 @@
                         <th>Relic</th>
                     </tr>
                     <!-- cv pasted -->
-                    var tableArr = [
-                     ["row 1, cell 1", "row 1, cell 2"],
-                     ["row 2, cell 1", "row 2, cell 2"]
-                    ]
-                    let table = document.createElement('table');
-                    for (let row of tableArr) {
-                     table.insertRow();
-                    for (let cell of row) {
-                      let newCell = table.rows[table.rows.length - 1].insertCell();
-                     newCell.textContent = cell;
+                    function createTable(tableData) {
+                        var table = document.createElement('table');
+                        var tableBody = document.createElement('tbody');
+                      
+                        tableData.forEach(function(rowData) {
+                          var row = document.createElement('tr');
+                      
+                          rowData.forEach(function(cellData) {
+                            var cell = document.createElement('td');
+                            cell.appendChild(document.createTextNode(cellData));
+                            row.appendChild(cell);
+                          });
+                      
+                          tableBody.appendChild(row);
+                        });
+                      
+                        table.appendChild(tableBody);
+                        document.body.appendChild(table);
                       }
-                    }
-                    document.body.appendChild(table);
+                      
+                      createTable([["row 1, cell 1", "row 1, cell 2"], ["row 2, cell 1", "row 2, cell 2"]]);
                 </table>
 			</td>
 		</tr>
