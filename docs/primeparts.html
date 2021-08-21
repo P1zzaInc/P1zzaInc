@@ -48,19 +48,20 @@
     function createTable(tableData) {
         var table = document.createElement('table');
         var tableBody = document.createElement('tbody');
-
-        tableData.forEach(function (rowData) {
+        for (let i = 0; i < tableData.length; i++) {
+            const rowData = tableData[i];
             var row = document.createElement('tr');
-
-            rowData.forEach(function (cellData) {
+            if (i === 0) {
+                row.style.fontWeight = "bold"
+            }
+            for (let j = 0; j < rowData.length; j++) {
+                const cellData = rowData[j];
                 var cell = document.createElement('td');
                 cell.appendChild(document.createTextNode(cellData));
                 row.appendChild(cell);
-            });
-
+            }
             tableBody.appendChild(row);
-        });
-
+        }
         table.appendChild(tableBody);
         document.querySelector("#table-content").appendChild(table)
     }
