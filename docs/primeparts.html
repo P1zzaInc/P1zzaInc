@@ -18,8 +18,12 @@
                 </table>
             </td>
             <td id="table-content" style="vertical-align:top;">
-
-
+                <table style="width:100%">
+                    <tr>
+                        <th>Part</th>
+                        <th>Needed</th>
+                        <th>Relic</th>
+                    </tr>  
             </td>
         </tr>
     </table>
@@ -53,7 +57,7 @@
         table.appendChild(tableBody);
         document.querySelector("#table-content").appendChild(table)
     }
-    createTable([[str.bold("row 1, cell 1", "row 1, cell 2", "yo")], ["row 2, cell 1", "row 2, cell 2"]]);
+    createTable([["row 1, cell 1", "row 1, cell 2", "yo"], ["row 2, cell 1", "row 2, cell 2"]]);
 
 </script>
 
